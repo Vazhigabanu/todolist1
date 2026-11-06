@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Task Planner</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+    <div class="main-box">
+
+        <header>
+            <h1>Daily Planner</h1>
+            <p>Plan your work and achieve your goals!</p>
+        </header>
+
+        <section class="entry-box">
+            <input type="text" id="newTask"
+                   placeholder="What do you need to do?">
+
+            <select id="taskPriority">
+                <option value="Normal">Normal</option>
+                <option value="Important">Important</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+
+            <button onclick="createTask()">Add</button>
+        </section>
+
+        <div class="summary">
+            <div class="summary-card">
+                <h2 id="allTotal">0</h2>
+                <p>All Tasks</p>
+            </div>
+
+            <div class="summary-card">
+                <h2 id="doneTotal">0</h2>
+                <p>Finished</p>
+            </div>
+
+            <div class="summary-card">
+                <h2 id="leftTotal">0</h2>
+                <p>Remaining</p>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <h3>My Activities</h3>
+
+            <select id="viewType" onchange="showTasks()">
+                <option value="everything">All Activities</option>
+                <option value="unfinished">Remaining</option>
+                <option value="finished">Finished</option>
+            </select>
+        </div>
+
+        <div id="activityArea"></div>
+
+        <button class="remove-all" onclick="removeFinished()">
+            Remove Finished Activities
+        </button>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
